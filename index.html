@@ -8,16 +8,30 @@
 </head>
 <body>
   <h1>換匯服務</h1>
-  <input type = "text" type="text" name="currency">
+  <input id = "currency" type="text" name="currency">
   <select id =  "option-select">
-    <option> 台幣換美元</option>
-    <option>美元換台幣</option> 
+    <option value = "nt2us" > 台幣換美元</option>
+    <option value=  "us2nt" >美元換台幣</option> 
   </select>
   <button id = "submit-btn"> 換算</button>
 
   <hr>
     <div id ="result"></div> 
+    <script type="text/javascript"> 
+      var optionSelect = document.getElementById('option-select');
+      
+      var submitBtn =document.getElementById('submit-btn');
+      submitBtn.addEventListener('click' , function() {
+        var option = optionSelect.value;
+        var currency =document.getElementById('currency').value;
+        var result =document.getElementById('reslut');
+       
+        if (currency===NaN || currency===''){
+            result.innerHTML= '<h4>error </h4>';
+        }
 
+      });
+    </script>
 </body>
 
 </html>
