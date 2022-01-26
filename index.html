@@ -22,13 +22,13 @@
       
       var submitBtn =document.getElementById('submit-btn');
       submitBtn.addEventListener('click' , function() {
-        
+
         var option = optionSelect.value;
         var currency =document.getElementById('currency').value;
         var result =document.getElementById('reslut');
        
         if (currency===NaN || currency===''){
-            console.log("Error");
+            console.log("請輸入正確數值");   
             //result.innerHTML= '<h4> error</h4>';
         }
 
