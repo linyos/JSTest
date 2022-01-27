@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html >
+<html lang="en">
 <head>
-    <title>換匯</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
 </head>
 <body>
-  <h1>換匯服務</h1>
-  <input id = "currency" type="text" name="currency">
-  <select id =  "option-select">
-    <option value = "nt2us" > 台幣換美元</option>
-    <option value=  "us2nt" >美元換台幣</option> 
-  </select>
-  <button id = "submit-btn"> 換算</button>
+  <h1> 第一段</h1>
+  <p id="demo"> Change HTML Content</p>
 
-  <hr>
-    <div id ="result"></div>
-    <script type="text/javascript" src="main.js">  </script>
+  <script type="text/javascript"  src="main.js"></script>
+
+    <button type="button" onclick="myFun()"> OnClick</button> 
+
+
+
+    <h1>第二段</h1>
+    <input id="demo1" type="text">
+    <script type="text/javascript"  src="main.js"></script>
+    <button type="button" onclick="myFun2()">OnClick</button>
+
+
+    <p>创建 JavaScript 对象。</p>
+    <p id="demo2"></p>
+    <script>
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+document.getElementById("demo2").innerHTML =
+	person.firstName + " 现在 " + person.age + " 岁.";
+</script>
+
+
 </body>
+
+
+
+ 
+
 </html>
