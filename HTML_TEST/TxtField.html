@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--文本-->
+    <form>
+        First name :<input type="text" name="firstname">
+        <br>
+        Last name :<input type="text" name="lastname">
+    </form>
+
+
+    <br>
+    <!--Password-->
+    <form>
+        Password : <input type="password" name="pwd">
+    </form>
+
+
+
+    <h3> 單選按鈕</h3>
+    <form>
+        <input type="radio" name = "sex" value="male"> male
+        <br>
+        <input type="radio" name="sex" value="female"> female
+    </form>
+
+    <h3> 複選按鈕</h3>
+    <form>
+        <input type="checkbox" name = "vehicle" value="Bike"> bike
+        <br>
+        <input type="checkbox" name="vehicle" value="Car"> car
+    </form>
+    
+
+    <h3>提交按鍵</h3>
+
+    <form name="input" action="html_form_action.php" method="get">  <!--傳到指定地方 -->
+        Username: <input type="text" name="user">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3> Button</h3>
+    <form action="">
+        <input type="button" value="Hello Word!">
+    </form>
+
+
+
+    <h3> 文字框</h3>
+    <textarea rows="10" cols="30"> 
+        文字框
+    </textarea>
+
+
+    <h3> 下拉選單</h3>
+    <form action="">
+       <select name ="cars">
+            <option value="Volvo"> Volvo</option>
+            <option value="SAAB"> SAAB</option>
+           
+            <option value="Audi" selected> Audi</option> <!-- 預選-->
+        </select>
+    </form>
+
+
+</body>
+</html>
