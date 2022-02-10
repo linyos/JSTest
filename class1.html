@@ -13,15 +13,22 @@
 
     <input id="demotxt" type="text">
 
-    <button type="button" onclick="myFun()"> 點 </button>
+    <button type="button" onclick="myFun()"> 點 </button> <br>
+
+    
+   
+    <button type="button"  onclick="fun1()">點擊</button>
+    <p id="p1"></p>
 
 
-
-    <script> document.write(Date()); </script>
-
-    <p id="a"></p>
-    <script>
-     document.getElementById("a").innerHTML="John";
+    <script> 
+    var person={
+        firstname : "John",
+        lastname  : "Doe",
+        id        :  5566
+    }
+     document.write(person.lastname + "<br>");
+      document.write(person["firstname"] + "<br>");
     </script>
 </body>
 </html>
