@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle ="#FF0000";
+        ctx.fillRect(0,0,150,75);
+        ctx.moveTo(0,0);
+        ctx.lineTo(200,100);
+        ctx.stroke();
+        
+        
+
+    </script>
+    
+
+    <br>
+    <canvas id="myCan1" width="200" height="100" style="border: 1px solid #d3d3d3;"></canvas>
+
+    <script>
+        var c =document.getElementById("myCan1");
+        var ctx = c.getContext("2d");
+        ctx.font ="30px Arial";
+        ctx.fillText ("Hello" ,10,50);
+    </script>
+   
+   <br>
+
+
+   <p>Image to use:</p>
+   <img id="image1" src="images/111.jpg" alt="The image" width="100" height="100" > 
+   <br>
+   <p>Canvas</p>
+    <canvas id="myCanvas2" width="250" height="300" style="border: 1px solid #d3d3d3;"></canvas>
+
+
+    <script>
+        var x =document.getElementById("myCanvas2");
+        var xtx = x.getContext("2d");
+        var img = document.getElementById("image1");
+
+        img.onload = function(){
+            xtx.drawImage(img,1,1);
+        }
+
+    </script>
+</body>
+</html>
