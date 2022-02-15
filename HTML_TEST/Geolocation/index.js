@@ -4,8 +4,6 @@
 
 
 function getLocation(){
-
-   
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition, showError);
     }
@@ -13,14 +11,8 @@ function getLocation(){
     {
         x.innerHTML="不支持此功能";
     }
-
 }
-
-
-
 function showPosition(position){
-    
-    
     lat=position.coords.latitude;
     lon = position.coords.longitude;
     latlon=new google.maps.LatLng(lat, lon);
