@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!--datalist 預選列表-->
+    <div>
+        <form>
+            <input list="browsers" name="browser">
+            <datalist id="browsers">  <!-- 屬性規定 form 或 input 擁有該自動功能-->
+                <option value="IE"></option>
+                <option value="Google"></option>
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form>
+        
+    </div>
+    <br>
+    <br>
+
+    <div>
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+            <input type="range" id="a" value="50">100 
+            +<input type="number" id="b" value="50"> 
+            =<output name="x" for="a b"></output>
+        </form>
+    </div>
+
+</body>
+</html>
