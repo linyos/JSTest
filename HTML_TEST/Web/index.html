@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        function  clickCounter(){
+        if (typeof(Storage)!=="undefined") {
+            // localStorage 長久保存網站數據，直到手動去除
+           if (localStorage.clickcount) {
+               localStorage.clickcount= Number(localStorage.clickcount)+1;
+           }
+           else{
+               localStorage.clickcount = 1;
+           }
+           document.getElementById("result").innerHTML = "已經按了" + localStorage.clickcount+"次";
+        }
+        else{
+            document.getElementById("result").innerHTML= "不支持";
+        }
+        }
+    </script>
+
+
+    <button onClick="clickCounter()" type="button">按下</button>
+</body>
+</html>
