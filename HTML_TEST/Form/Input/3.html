@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: green;
+        }
+    </style>
+</head>
+<body style="text-align:center;">
+    <!--autocomplete="on/off" :
+     off: It tells the browers not to save data intputted by the user for later autocompletino 
+     on similar forms.
+     It stops the browser form caching form data in the session history. When form data
+     is cached in the session history. the information filled in by the user is shown in the case
+     where the user has submitted the form and clicked the Back button to go back to the original form page. 
+    -->
+    <h1 style="color: green;"> GeeksforGeeks</h1>
+    <h4>Autocomplete on/off</h4>
+    <form action="https://ide.geeksforgeeks.org/tryit.php"
+    autocomplete="on">
+        First Name: <input type="text" name="fname" >
+        <br><br> 
+           
+        Last name: <input type="text" name="lname">
+           
+        <br><br> 
+           
+        Email_id: <input type="email" name="email"
+                    autocomplete="off">
+           
+        <br><br>
+           
+        <input type="submit">
+    </form>
+
+
+    <p>
+        <b>Note:</b> autocomplete is "on" for the
+        form, but "off" for the e-mail field.
+    </p>
+
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+h1{
+    color: green;
+    text-align: center;
+}
+select{
+    /*Removing the dafault dropdown arrow */
+     appearance: none; 
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0 ;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    z-index: 1;
+    /* Remove focus outline*/
+    outline: none;
+}
+.select{
+    display: grid;
+    grid-template-columns: "select";
+    align-items: center;
+    position: relative;
+
+    min-width: 15ch;
+    max-width: 30ch;
+
+    border: 1px solid var(#777);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+
+    font-size: 1.25rem;
+    /* 屬性可以指定當滑鼠指標指向哪個物件時，顯示不同的游標. */
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+.select ::-ms-expand{
+    display: none;
+}
+.select::hover::after{
+    border-color: #888;
+}
+/* // Focus on selected item */
+
+.select:focus{
+    border-color: #800080;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+    color: #222;
+    outline: none;
+}
+
+.slct::after
+{
+    content: '';
+    display: inline-block;
+    float: right;
+    width: .5rem;
+    height: .5rem;
+    border-bottom: 1px solid currentColor;
+    ;border-left: 1px solid currentColor;
+    border-bottom-left-radius: 2px;
+    transform:  rotate(45deg) translate(50% 0%);
+    transform-origin: center center;
+    transition: transform ease-in-out 100ms
+}
+
+
+.select::after{
+    
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+}
