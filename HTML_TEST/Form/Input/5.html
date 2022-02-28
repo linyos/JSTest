@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: lightgreen;
+            font-size: 20PX;
+        }
+        .btn{
+            background-color:  #4caf50;
+            color: white;
+            font-size: 20px;
+            font: optional;
+            padding: 15px 32px;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1 style="color: green;">GeeksForGeeks</h1>
+    <h2>
+        How to specify one or more forms 
+        the label belongs to?
+    </h2>
+
+    <form id="form1">
+        <!--for 屬性與那個表單元素綁在一起-->
+        <label for="fname" >First Name:</label>
+        <input type="text" id="fname" name="fname">
+        <br><br>
+        <button class="btn" type="submit">Submit</button>
+    </form>
+    <br>
+    <p>   The "Last Name" label is not in the 
+        <form> element but it is defined
+        as a part of form element.  
+    </p>
+    <label for="lname" form="form1">Last Name:</label>
+    <input type="text" id="lname" name="lname" form="form1">
+
+
+</body>
+</html>
