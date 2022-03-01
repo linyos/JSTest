@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+    font-family: Arial;
+    font-size: 12px;;
+}
+
+img{
+    width: 100%;
+}
+
+div#form-box{
+    margin-top: 30px;
+    text-align: center;
+}
+
+div#input-group{
+    width: 90%;
+    margin: 15px auto 5px;
+    position: relative;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+input[type="text"]{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 12px;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 10px 10px 10px 50px;
+    margin-bottom: 20px;
+
+
+}
+
+
+/*:focus */
+input[type="text"] :focus {
+    border: 3px solid #B9E5FB;
+    border-radius: 10px;
+  }
