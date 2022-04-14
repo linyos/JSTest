@@ -1,0 +1,25 @@
+.container{
+    padding: 0.01 em 16 px;
+}
+
+.container-red{
+    color: #fff !important;
+    background-color: #f44336 !important;
+}
+
+.text-blue{
+    color: #2196F3 !important;
+}
+
+.hover-red:hover{
+    color: #fff !important;
+    background-color: #f44336 !important;
+}
+
+.hover-text-white:hover{
+    color: #fff !important;
+}
+.orange{
+    color: #000;
+    background-color: orange;
+}
