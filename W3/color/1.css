@@ -5,6 +5,7 @@
 .container-red{
     color: #fff !important;
     background-color: #f44336 !important;
+    opacity: 0.6;
 }
 
 .text-blue{
