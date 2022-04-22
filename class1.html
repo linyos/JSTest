@@ -6,34 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="class1.js"></script>
+    <script> 
+  
+        function setCookie(cname , cvalue , exdays)
+        {
+            var d = new Date();
+            d.setTime(d.getTime() +(exdays*24*60*60*1000) );
+            var expires = "expires="+d.toGMTString();
+            document.cookie = cname + "=" + cvalue + "; " + expires;
+        }
+    
+        function getCookie(cname)
+        {
+            var name = cname+ "=";
+            var ca = document.cookie.split(';');
+            for (var i =0 ; i < ca.length;i ++){
+                var c = ca[i].trim();
+                if(c.indexOf(name)==0) return c.substring(name.length , c.length);
+            }
+            return "";
+        }
+        function checkCookie(){
+            var username = getCookie("username");
+            if (username !="")
+            {
+                alert("Welcome again" + username);
+            }
+            else{
+                username = prompt("please enter your name ","");
+                if (username !="" && username!=null)
+                {
+                    setCookie("username",username, 365);
+                }
+            }
+        }
+    
+    
+    
+          //document.getElementById("demo").innerHTML= txt;
+        </script>
 </head>
-<body>
+<body onload="checkCookie()">
     
 
     <h1> Fisrt Js</h1>
     <!-- <p id="demo"> 段落</p> -->
 
-    <input id="demotxt" type="text">
-
-    <button type="button" onclick="myFun()"> 點 </button> <br>
-
-    
-   
-    <button type="button"  onclick="fun1()">點擊</button>
-    <p id="p1"></p>
-
-
-    <script> 
-    var person={
-        firstname : "John",
-        lastname  : "Doe",
-        id        :  5566
-    }
-     document.write(person.lastname + "<br>");
-      document.write(person["firstname"] + "<br>");
-    </script>
+    <p id="demo">...</p>
+    <button onclick="myfun()">點</button>
+  
 
 </body>
-</html> -->
+</html> 
 
 
