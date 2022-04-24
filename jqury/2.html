@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $(this).css("background-color","#cccccc");
+            });
+            $("input").blur(function(){
+                $(this).css("background-color","#ffffff");
+            });
+        });
+    </script>
+
+    <style>
+        div{
+            width: 250px;
+            height: 250px;
+            padding: 15px;
+            margin: 10px;
+            background-color: green;
+        }
+
+        #panel , #flip{
+            background-color: #e5eecc;
+            text-align: center;
+            padding: 5px;
+            border :solid 5px #c3c3c3;
+        }
+        #panel{
+            padding: 50px;
+            display: none;
+        }
+
+
+
+    </style>
+
+
+</head>
+<body>
+    
+    <!-- <script>
+        $(document).ready(function(){
+            $('#p1').mouseover
+            (function(){
+                alert("滑鼠在上下按下!");
+            });
+        });
+    </script>
+
+    <p id ="p1"> 這是段落</p> -->
+
+
+
+    Name:  <input type="text" name="fullname"> <br>
+    Email: <input type="text" name="email">
+
+
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide(5000);
+            });
+
+            $("#show").click(function(){
+                $("p").show();
+            });
+        });
+    </script>
+
+    <button  id="hide"> 隱藏 </button>
+    <button  id="show"> 顯示 </button>
+
+    <p> 隱藏按下去</p>
+
+
+    <script>
+        $(document).ready(function(){
+            $(".hidebtn").click(function(){
+                $("div").hide(1000 , "linear" , function(){
+                    alert("done!");
+                });
+            });
+        });
+    </script>
+
+
+
+    <div> 隱藏以及設置函數</div>
+    <button class="hidebtn">隱藏DIV</button>
+
+    fadeToggle / fadein /fadeout 
+    <script>
+        $(document).ready(function(){
+            $("button#fade").click(function(){
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+		        $("#div3").fadeToggle(3000);
+            });
+        });
+    </script>
+
+
+    <button id="fade">淡入淡出</button>
+    <br><br>
+    <div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+    <br>
+    <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+
+
+
+    <script>
+        $(document).ready(function(){
+            $("#flip").click(function(){
+                $("#panel").slideDown(2000);
+            });
+        });
+    </script>
+
+    
+    <div id="flip">點擊我</div>
+    <div id="panel">Hello word</div>
+
+</body>
+</html>
