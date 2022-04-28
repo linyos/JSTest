@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Js prototype</h1>
+
+    <p id="demo"></p>
+
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+        // 使用prototype 屬性可以給類型添加新屬性
+        Person.prototype.nationality = "English";
+
+        // 使用prototype 屬性可以給類型添加新方法
+        Person.prototype.name = function() {
+            return this.firstName + " " + this.lastName
+        };
+
+        var myFather = new Person("John" , "Doe" , 50 , "blue");
+        document.getElementById("demo").innerHTML = "My father is " + myFather.nationality + " name:  " + myFather.name();
+
+
+
+    </script>
+</body>
+</html>

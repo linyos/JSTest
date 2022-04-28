@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>你好世界!</p>
+    <div id="main">
+        <p> DOM is extremely useful。</p>
+        <p>The example for showed  <b>getElementsByTagName</b> Method </p>
+    </div>
+
+    <script>
+        var x = document.getElementById("main");
+        var y = x.getElementsByTagName("p");
+
+        document.write("id= main first element is " + y[0].innerHTML);
+    </script>
+</body>
+</html>

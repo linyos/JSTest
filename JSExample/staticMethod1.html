@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h1>JS 類型的靜態法 </h1>
+        <p id="demo"></p>
+        <script>
+            class Node{
+                constructor(name)
+                {
+                    this.name=name;
+                }
+                static hello(){
+                    return "Hello!!";
+                }
+            }
+            
+            let noob = new Node("test");
+            // 必須直接調用類型中的靜態方法
+            document.getElementById("demo").innerHTML=Node.hello();
+            // 不能通過物件類型來調用類型中的靜態方法
+            document.getElementById("demo").innerHTML=noob.hello();
+        </script>
+
+
+        <h1>object 可以作為參數參數傳送至靜態方法</h1>
+        <p id="demo1"></p>
+
+        <script>
+            class  Node1{
+                constructor(name)
+                {
+                    this.name=name;
+                }
+                static hello(x){
+                    return "Hello!!" + x.name;
+                }
+            }
+
+            let noob1 = new Node1("AAAA");
+            document.getElementById("demo1").innerHTML = Node1.hello(noob1);
+
+        </script>
+        
+</body>
+</html>
