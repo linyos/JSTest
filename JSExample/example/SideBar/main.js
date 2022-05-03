@@ -1,15 +1,14 @@
 function openNav(){
     //全屏
-   // document.getElementById("mySidenav").style.width= "100%";
-   // 一個區塊
-    document.getElementById("mySidenav").style.display="block"
+    document.getElementById("main").style.marginLeft = "25%";
+    document.getElementById("mySidenav").style.width= "25%";
+    document.getElementById("mySidenav").style.display= "block";
+    document.getElementById("openNav").style.display="none";
 }
 
 
 function closeNav(){
-   
-    //document.getElementById("mySidenav").style.width="0%";
-
-    
-    document.getElementById("mySidenav").style.display="nobe";
+    document.getElementById("main").style.marginLeft="0%";
+    document.getElementById("mySidenav").style.display="none";
+    document.getElementById("openNav").style.display="inline-block";
 }
