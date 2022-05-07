@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slides{
+            display: none;
+        }
+
+        .fade{
+            animation-name: fade;
+            animation-duration: 2S;
+        }
+        @keyframes fade{
+            from {
+                opacity: 0.4;
+            }
+            to{
+                opacity: 1;             
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>SlideShow</h1>
+
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="/JSExample/example/image/1.jpg">
+            <div>1</div>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="/JSExample/example/image/2.jpg">
+            <div>2</div>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="/JSExample/example/image/3.jpg">
+            <div>3</div>
+        </div>
+    </div>
+
+    <a id="prev" href="#">Prev</a>
+    <a id="next" href="#">Next</a>
+
+
+
+    <script>
+        var SlideIndex = 1;
+        document.getElementById('prev').addEventListener('click', function(){
+            nextSlide(-1);
+        })
+        document.getElementById('next').addEventListener('click', function(){
+            nextSlide(+1);
+        })
+        function showSlides(index){
+            var slides = document.getElementsByClassName('slides');
+            console.log(index);
+            if(index> slides.length){
+                SlideIndex=1;
+            }
+            if(index < 1){
+                SlideIndex =slides.length;
+            }
+            for (var i = 0 ; i < slides.length; i++){
+                slides[i].style.display='none';
+            }
+            slides[SlideIndex-1].style.display='block';
+
+        }
+
+        // initial =1
+        showSlides(SlideIndex);
+
+
+        function nextSlide(num){
+            SlideIndex +=num;
+            showSlides( SlideIndex);
+        }
+    </script>
+
+
+</body>
+</html>
