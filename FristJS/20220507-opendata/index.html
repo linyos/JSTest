@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+        <img id="loading" src="./loading.gif">
+    </div>
+
+
+    <script>
+        var xhr=new XMLHttpRequest();
+       
+       /var url='http://163.29.157.32:8080/dataset/6a3e862a-e1cb-4e44-b989-d35609559463/resource/f4a75ba9-7721-4363-884d-c3820b0b917c/download/363b8cdd1d2742768af9e47ae54a09c2.json';
+        
+        xhr.open('GET',url);
+        
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState==4){
+                console.log(xhr.responseText);
+                document.getElementById("loading").style.display="none";
+               var data= XML.parse(xhr.responseText);
+              
+                console.log(data);
+                console.log(data[0].ImageName);
+
+                data.forEach(function(value, index){
+                    var image  = document.createElement("img");
+                    image.src=data[index].ImageName;
+                    console.log(data[index].ImageName);
+                    document.querySelector('#result').appendChild(image);
+                });
+            }
+        }
+        xhr.send();
+
+        
+    </script>
+</body>
+</html>
