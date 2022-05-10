@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#test1").text ("Hello World Test1 !!!!");
+            });
+
+
+            $("#btn2").click(function(){
+                $("#test2").html("<b> Hello World Test2 !!!! </b>");
+            });
+
+            $("#btn3").click(function(){
+                $("#test3").val("Reset Value");
+            });
+
+        });
+
+    </script>
+
+
+
+    <p id="test1">Test1 </p>
+    <p id="test2"> Test2 </p>
+    <p> 輸入框: <input type="text" id="test3" value="XXOO"> </p>
+    <button id="btn1">Setting Text</button>
+    <button id="btn2">Setting HTML</button>
+    <button id="btn3">Setting Value</button>
+
+
+    <hr>
+    <h2>回調函數</h2>
+
+    
+    <script>
+        $(document).ready(function(){
+            $("#btn11").click(function(){
+                $("#demo1").text(function( i ,origTxt){
+                    return "original Text : " +origTxt + "New Text:   Hello World !!! " + i + " ";
+                });
+            });
+
+            $("#btn21"),click(function(){
+                $("#demo2").html(function( i , origTxt){
+                    return "origianal HTML: " +  origTxt + "New Html:  <b> Hello World </b>" + i +""; 
+                });
+            });
+        });
+    </script>
+
+
+    <p id="demo1">Demo1 </p>
+    <p id="demo2">Demo2 </p>
+    
+    <button id="btn11">Setting Text</button>
+    <button id="btn21">Setting HTML</button>
+
+
+
+</body>
+</html>
