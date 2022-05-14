@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="./test.json"></script> 
+    <!-- <iframe  src="./test.json"></iframe> -->
+</head>
+    <canvas id="myChart" style="width: 50%;max-width: 500px; height: 50%; max-height: 500px;">
+    </canvas> 
+    <script>
+
+        var xValues = [];
+        var yValues = [];
+        function readTextFile (file  , callback){
+            var rawFile = new XMLHttpRequest();
+            rawFile.overrideMimeType('application/json');
+            rawFile.open('GET', file,true);
+            rawFile.onreadystatechange=function(){
+                if (rawFile.readyState === 4 && rawFile.status == "200") {
+                    callback(rawFile.responseText);
+                }
+            }
+            rawFile.send(null);
+        }
+
+        readTextFile('test.json' , function(text){
+            var data = JSON.parse(text);
+            data.forEach(function(value , index){
+                console.log(data[index].WaterLevel);
+                xValues.push(data[index].Date);
+                yValues.push(data[index].WaterLevel);
+            });
+        })
+        new Chart ("myChart" , {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options : {
+                legend :{display : false },
+                // scales: {
+                //     yAxes: 'r',
+                // }
+            }
+        }); 
+
+
+        
+    </script> 
+    
+
+
+    <script>
+ 
+    </script>
+
+</body>
+</html>
