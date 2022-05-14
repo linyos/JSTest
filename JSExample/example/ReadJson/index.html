@@ -10,6 +10,7 @@
     <script type="text/javascript" src="./test.json"></script> 
     <!-- <iframe  src="./test.json"></iframe> -->
 </head>
+    <h1> read json file </h1>
     <canvas id="myChart" style="width: 50%;max-width: 500px; height: 50%; max-height: 500px;">
     </canvas> 
     <script>
@@ -45,11 +46,13 @@
                     lineTension: 0,
                     backgroundColor: "rgba(0,0,255,1.0)",
                     borderColor: "rgba(0,0,255,0.1)",
-                    data: yValues
+                    data: yValues,
+                    label: "鯉魚潭水庫近年水位",
                 }]
             },
             options : {
                 legend :{display : false },
+                text : "test"
                 // scales: {
                 //     yAxes: 'r',
                 // }
