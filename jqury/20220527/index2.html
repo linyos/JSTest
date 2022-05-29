@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .descendants *
+        { 
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+    </style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+	    $("div").children("p.1").css({"color":"red","border":"2px solid red"});
+});
+
+
+    $(document).ready(function(){
+        $(div).find("p.2").css({"color":"red","border":"2px solid red"});
+    });
+</script>
+
+</head>
+<body>
+    
+    <div class="descendants" style="width: 500px;"> div (当前元素)  
+        <p class="1">p (兒子元素)
+            <span>span (孫子元素)</span>     
+        </p>
+        <p class="2">p (兒子元素)
+            <span>span (孫子元素)</span>
+        </p> 
+    </div>
+
+
+
+</body>
+</html>

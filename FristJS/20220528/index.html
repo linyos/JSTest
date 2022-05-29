@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Callback等待3秒</p>
+    <p id="demo"></p>
+    <script>
+        // function print(){
+        //     document.getElementById("demo").innerHTML ="Hello word  Callback";
+        // }
+        // setTimeout(print , 3000);
+
+            setTimeout (function() {
+                document.getElementById("demo").innerHTML = "Hello word Callback";
+            } , 3000);
+
+    </script>
+
+
+    <p> 以下是通過非同步取德</p>
+    <p id="demo1"></p>
+    <script>
+        var xhr = new XMLHttpRequest();
+
+        xhr.onload =function(){
+            document.getElementById("demo1").innerHTML = xhr.responseText;
+        }
+
+        xhr.onerror = function(){
+            document.getElementById("demo1").innerHTML = "失敗";
+        }
+
+
+        // 非同步 GET 
+        xhr.open("GET" , "info.txt" , true);
+        xhr.send();
+    </script>
+</body>
+</html>

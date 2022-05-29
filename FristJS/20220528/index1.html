@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(function(){
+        //     console.log("first");
+        //     setTimeout(function(){
+        //         console.log("second");
+        //         setTimeout(function(){
+        //             console.log("third");
+        //         },3000);
+        //     },4000);
+        // },1000);
+
+
+        // new Promise(function (resolve , reject){
+        //     setTimeout(function(){
+        //         console.log("first");
+        //         resolve();
+        //     },1000);
+        // }).then(function(){
+        //     return new Promise(function (resolve , reject){
+        //         setTimeout(function(){
+        //             console.log("second");
+        //             resolve();
+        //         },4000);
+        //     });
+        // }).then (function(){
+        //     setTimeout(function(){
+        //         console.log("Third");
+        //     },3000);
+        // });
+
+            new Promise (function (resolve , reject){
+                var a = 1 ;
+                var b = 2;
+                if (b==0) reject ("Divide zero");
+                else resolve (a/b);
+            }). then (function (value){
+                console.log("a/b = " + value);
+            }).catch(function(err){
+                console.log(err);
+            }).finally(function(){
+                console.log("End");
+            });
+    </script>
+</body>
+</html>
