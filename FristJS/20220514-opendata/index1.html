@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="result">
+
+    </div>
+
+    <script>
+        var dataUrl ="https://datacenter.taichung.gov.tw/Swagger/OpenData/cc6b5d3f-9306-4e15-9c50-f02c95048e79?limit=1000"
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET' , dataUrl ,true);
+        xhr.send();
+        xhr.onreadystatechange= function(){
+            if  (this.readyState===4 && this.status===200){
+                var data = JSON.parse(this.responseText);
+                //console.log(data);
+
+                data.forEach(function(value , index){
+                    myh1= document.createElement("p");
+                    myh1.textContent = "Title: " + data[index].Position;
+                    myh1.textContent += "X: "+ data[index].X  + "Y: " + data[index].Y; 
+                    document.querySelector('.result').appendChild(myh1);
+                })
+            }
+        }
+    </script>
+</body>
+</html>

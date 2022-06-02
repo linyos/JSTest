@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+   
+    <a name="#jsonp-ajax"></a>
+    <div id="example-section39">
+        <div> Car sale report</div>
+        <div  id="div391"></div>
+        <button id="btn392" type="button">Click</button>
+    </div>
+    <script>
+        var data = {
+        resource_id: '6da8e048-3b16-4eca-965f-3a3f4720494a', // the resource id 
+        };
+        $.ajax({
+            url: 'https://data.tainan.gov.tw/api/3/action/datastore_search?resource_id=6da8e048-3b16-4eca-965f-3a3f4720494a&q',
+            type:'GET',
+            data: data,
+            dataType: 'jsonp',
+            crossDomain:true,
+            cache:false,
+            success: function(data) {
+                alert('Total results found: ' + data.result.total)
+            },
+            error:function(jqXHR, textStatus, errorThrown){
+                alert(errorThrown);
+            }
+        });
+
+        
+        // $('#btn392').click(function(){
+        //     var url ="https://data.tainan.gov.tw/api/3/action/datastore_search?resource_id=6da8e048-3b16-4eca-965f-3a3f4720494a&q";
+            
+        //     var success = function(data){
+        //         var html=[];
+        //         data = $.parseJSON(data);
+        //         $.each(data, function(index  , d){
+        //             html.push("Manufacturer : ", d.CountryName, ", ");
+        //     });
+        //     $("#div391").html(html.join('')).css("background-color", "orange");
+        //     };
+            
+        //     $.ajax({
+        //         type:'GET',
+        //         url:url,
+        //         data:{todo:'jsonp'},
+        //         dataType:"jsonp",
+        //         crossDomain:true,
+        //         cache:false,
+        //         success:success,
+        //         error:function(jqXHR, textStatus, errorThrown){
+        //             alert(errorThrown);
+        //         }
+        //     });
+        // });
+    </script>
+
+
+</body>
+</html>
